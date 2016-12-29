@@ -1,0 +1,16 @@
+** NODE notes **
+
+Node is asynchronous middleware to handle events - uses one thread that is nonblocking
+
+Node is kinda like a fake browser
+
+window is generally the global object but with node the global object is:
+global.console, require, exports, __dirname, __filename, module, process, etc…
+
+process object can be used to get env info and interact with processes. The process variable logs all running processes as an array.
+
+HTTP module for doing server shit…
+
+
+
+
