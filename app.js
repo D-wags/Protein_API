@@ -29,6 +29,25 @@ var proteins = [
 	
 ];
 
+// Database configuration with mongoose
+if (process.env.MONGODB_URI) {
+	mongoose.connect(process.env.MONGODB_URI)
+} else {
+	mongoose.connect('mongodb://localhost/homework')
+}
+
+var db = mongoose.connection
+
+// Show any mongoose errors
+db.on('error', function(error) {
+  console.log('Mongoose Error: ', error);
+});
+
+// Once logged in to the db through mongoose, log a success message
+db.once('open', function() {
+  console.log('Mongoose connection successful.');
+});
+
 console.log(proteins[1].protein);
 
 var express = require("express");
